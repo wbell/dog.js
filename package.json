@@ -1,0 +1,34 @@
+{
+  "name": "dog.js",
+  "version": "0.0.0",
+  "description": "Dog things.",
+  "main": "./dist/dog.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wbell/dog.js"
+  },
+  "keywords": [
+    "dog",
+    "woof"
+  ],
+  "author": "Willie Bell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wbell/dog.js/issues"
+  },
+  "homepage": "https://github.com/wbell/dog.js",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "gulp": "^3.8.10",
+    "gulp-docco": "0.0.4",
+    "gulp-jshint": "^1.9.2",
+    "gulp-mocha": "^2.0.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
+    "jshint-stylish": "^1.0.0"
+  }
+}
