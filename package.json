@@ -4,8 +4,7 @@
   "description": "Dog things.",
   "main": "./dist/dog.js",
   "scripts": {
-    "start": "./node_modules/.bin/gulp default",
-    "test": "./node_modules/.bin/gulp test"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
