@@ -12,7 +12,7 @@ gulp.task('test', ['jshint'], function callmecallback(cb) {
           read: false
         })
         .pipe(mocha({
-          reporter: 'nyan'
+          reporter: process.env.CI ? 'list' : 'nyan'
         }))
         .pipe(istanbul.writeReports())
         .on('end', cb);
