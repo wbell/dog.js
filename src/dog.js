@@ -16,7 +16,7 @@
     var _this = this;
 
     // Set params to object literal if left `undefined`.
-    params = params || {}
+    params = params || {};
 
     // Set public static properties on `Dog`.
     this.owner = params.owner || "Jessica";
