@@ -1,9 +1,17 @@
 var chai = require('chai'),
-  should = chai.should(),
+  spies = require('chai-spies'),
+  rewire = require('rewire'),
+  loadModule = require('./module-loader').loadModule;
+
+  chai.use(spies);
+
+var should = chai.should(),
   expect = chai.expect,
   assert = chai.assert;
 
 var Dog = require('../src/dog');
+
+//var Dog = loadModule('./src/dog.js').module.exports;
 
 describe('Dog', function() {
   var dog = null;
@@ -12,6 +20,7 @@ describe('Dog', function() {
 
     afterEach(function() {
       dog = null;
+      Dog.prototype.defaultSounds = ["woof", "bow wow", "growl"];
     });
 
     it('should be an instance of Dog', function(){
@@ -71,6 +80,14 @@ describe('Dog', function() {
       expect(dog.sounds).to.have.length(4);
     });
 
+    it('should accept sounds as a comma separated list', function(){
+      dog = new Dog({
+        sounds: "brap, derp"
+      });
+
+      expect(dog.sounds).to.have.length(5);
+    });
+
   });
 
   describe('#bio()', function() {
@@ -85,6 +102,72 @@ describe('Dog', function() {
 
       expect(bio).to.be.a('string');
       expect(bio.split('.')).to.have.length(5);
+
+    });
+
+    it('should accept an array of hobbies', function(){
+      dog = new Dog({
+        hobbies: ["farting", "killing", "pimping"]
+      });
+
+      var bio = dog.bio();
+
+      expect(bio.indexOf("farting and killing and pimping")).to.be.a('number').and.not.equal(-1);
+    });
+
+    it('should accept a string of hobbies', function(){
+      dog = new Dog({
+        hobbies: "farting, killing, and pimping"
+      });
+
+      var bio = dog.bio();
+
+      expect(bio.indexOf("farting, killing, and pimping")).to.be.a('number').and.not.equal(-1);
+    });
+  });
+
+});
+
+describe("Exports", function(){
+
+  describe("AMD", function(){
+
+    it('should export as an AMD module when "define" and "define.amd" are defined', function(){
+      var spy = chai.spy();
+
+      var define = function(func){
+        spy("Dog class");
+      };
+
+      define.amd = true;
+
+      var mockDog = loadModule('./src/dog.js', {define:define});
+
+      expect(spy).to.have.been.called();
+      expect(spy).to.have.been.called.with("Dog class");
+
+    });
+  });
+
+  describe("Node", function(){
+
+    it('should have the Dog class on its module exports', function(){
+      var mockDog = loadModule('./src/dog.js', {}).module.exports;
+      var _doggy = new mockDog();
+      var doggy = new Dog();
+
+      expect(_doggy.name).to.equal(doggy.name);
+    });
+
+  });
+
+  describe("Browser", function(){
+
+    it('should export as a global var when "define" and "module" are missing', function(){
+
+      var mockDog = loadModule('./src/dog.js', {define:null, module:{exports:null}, this:{}});
+
+      expect(mockDog).to.have.property('Dog');
 
     });
   });

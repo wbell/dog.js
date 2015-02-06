@@ -8,7 +8,7 @@ gulp.task('test', ['jshint'], function callmecallback(cb) {
     .pipe(istanbul())
     .pipe(istanbul.hookRequire())
     .on('finish', function finish() {
-      gulp.src(['./test/*.js'], {
+      gulp.src(['./test/*.test.js'], {
           read: false
         })
         .pipe(mocha({

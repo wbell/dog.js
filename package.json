@@ -22,6 +22,8 @@
   "homepage": "https://github.com/wbell/dog.js",
   "devDependencies": {
     "chai": "^1.10.0",
+    "chai-spies": "^0.5.1",
+    "extend": "^2.0.0",
     "gulp": "^3.8.10",
     "gulp-coveralls": "^0.1.3",
     "gulp-docco": "0.0.4",
@@ -30,6 +32,7 @@
     "gulp-mocha": "^2.0.0",
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^1.1.0",
-    "jshint-stylish": "^1.0.0"
+    "jshint-stylish": "^1.0.0",
+    "rewire": "^2.1.5"
   }
 }
