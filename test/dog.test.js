@@ -1,6 +1,5 @@
 var chai = require('chai'),
   spies = require('chai-spies'),
-  rewire = require('rewire'),
   loadModule = require('./module-loader').loadModule;
 
   chai.use(spies);
