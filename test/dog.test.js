@@ -10,8 +10,6 @@ var should = chai.should(),
 
 var Dog = require('../src/dog');
 
-//var Dog = loadModule('./src/dog.js').module.exports;
-
 describe('Dog', function() {
   var dog = null;
 
@@ -122,6 +120,31 @@ describe('Dog', function() {
       var bio = dog.bio();
 
       expect(bio.indexOf("farting, killing, and pimping")).to.be.a('number').and.not.equal(-1);
+    });
+  });
+
+  describe('#bark()', function() {
+    var dog = new Dog();
+
+    it('should bark out what you tell it to', function(){
+      var bark1 = dog.bark('my man!');
+
+      expect(bark1).to.equal('Crap Dog says: my man!');
+    });
+
+    it('should bark dog things on its own', function(){
+      var bark2 = dog.bark();
+
+      expect(bark2).to.match(/(woof|bow wow|growl)/);
+    });
+
+    it('should run barked things through callback when possible', function(){
+      var spy = chai.spy();
+      var bark3 = dog.bark("TEST", spy);
+
+      expect(spy).to.have.been.called();
+      expect(spy).to.have.been.called.with('Crap Dog says: TEST');
+
     });
   });
 

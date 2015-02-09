@@ -60,12 +60,17 @@
     return paragraph.join(" ");
   };
 
-  // Method for barking it up. Returns a string.
-  Dog.prototype.bark = function(str) {
+  // Method for barking it up. Returns a string, or string gets fed to a callback function.
+  Dog.prototype.bark = function(str, cb) {
     var prefix = this.name + ' says: ',
       ret = prefix + ((typeof str === 'string') ? str : randomValue(this.sounds));
-    console.log(ret);
-    return ret;
+
+    if(typeof cb === 'function'){
+      return cb(ret);
+    } else {
+      return ret;
+    }
+
   };
 
 
