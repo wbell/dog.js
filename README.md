@@ -84,6 +84,6 @@ Return Type: `string`
 
 ## To do:
 
-- Add bark method
+- ~~Add bark method~~
 - Add method of getting dog photo using an api
 - Make defaults less gross
