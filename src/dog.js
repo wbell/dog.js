@@ -60,6 +60,14 @@
     return paragraph.join(" ");
   };
 
+  // Method for barking it up. Returns a string.
+  Dog.prototype.bark = function(str) {
+    var prefix = this.name + ' says: ',
+      ret = prefix + ((typeof str === 'string') ? str : randomValue(this.sounds));
+    console.log(ret);
+    return ret;
+  };
+
 
   // Private methods
   //--------------------
