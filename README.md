@@ -81,3 +81,9 @@ Default: `["woof", "bow wow", "growl"]`
 _Returns a short bio of the dog instance you have created with `new Dog(opts)`_
 
 Return Type: `string`
+
+## To do:
+
+- Add bark method
+- Add method of getting dog photo using an api
+- Make defaults less gross
