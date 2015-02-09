@@ -32,7 +32,7 @@
         return _this.defaultSounds.concat(sounds);
       }
 
-      if (sounds instanceof String) {
+      if (typeof sounds === "string") {
         return _this.defaultSounds.concat(sounds.split(","));
       }
 
@@ -61,8 +61,9 @@
   };
 
 
-  // Private methods!
+  // Private methods
   //--------------------
+
   // Object used for generating sentences.
   var sentences = {
     intro: function(dog) {
@@ -107,4 +108,5 @@
   } else {
     global.Dog = Dog;
   }
+
 })(this);
