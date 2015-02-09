@@ -75,9 +75,9 @@ Type: `array`
 
 Default: `["woof", "bow wow", "growl"]`
 
-###Methods
+### Methods
 
-####.bio()
+#### .bio()
 _Returns a short bio of the dog instance you have created with `new Dog(opts)`_
 
 Return Type: `string`
