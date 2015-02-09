@@ -15,7 +15,7 @@ var Dog = require('../src/dog');
 describe('Dog', function() {
   var dog = null;
 
-  describe('constructor', function() {
+  describe('Constructor', function() {
 
     afterEach(function() {
       dog = null;

@@ -1,9 +1,15 @@
 language: node_js
 node_js:
-  - "0.10"
-
+- '0.10'
 notifications:
   email: false
-
 after_success:
-  - gulp coveralls
+- gulp coveralls
+deploy:
+  provider: npm
+  email: wbelliv@gmail.com
+  api_key:
+    secure: eYRgBFe9IcHPRc0RsrHFC4IgXu7Q06kQkP0JCFCcVeiSJ+DV84mGg6quRiCW5tVZl3/KxDBHt3hELgXiA1rtM7GBoCznU6GdVtoRDmEax8qjvuMw47ESXRRNXQArPVPKX8ENK/eNwYDPG96iokmHBUFJx22L67KUprSFmKC9weE=
+  on:
+    tags: true
+    repo: wbell/dog.js
