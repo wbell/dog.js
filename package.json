@@ -15,7 +15,7 @@
     "woof"
   ],
   "author": "Willie Bell",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wbell/dog.js/issues"
   },
