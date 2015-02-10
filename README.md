@@ -19,15 +19,21 @@ Excercise in travis ci, unit testing, code coverage, and npm. Ultimately a point
 
 ## Usage
 
-    var Dog = require('dog.js');
+```javascript
+var Dog = require('dog.js');
 
-    var myDog = new Dog();
+var myDog = new Dog();
 
-    console.log(myDog.bio());
+var bio = myDog.bio(); // get bio text
+
+$("p").text(bio); // (example jQuery code)
+
+myDog.bark("DERP!", alert); // alerts "Crap Dog says: DERP!"
+```
 
 ## API
 
-### Constructor: _new Dog(opts)_
+### Constructor: _new Dog([opts])_
 Returns an instance of the dog class; aka a new doggie to play with!
 
 #### opts
@@ -90,6 +96,25 @@ Default: `["woof", "bow wow", "growl"]`
 _Returns a short bio of the dog instance you have created with `new Dog(opts)`_
 
 Return Type: `string`
+
+#### .bark([phrase] [, callback])
+_Returns a string of dog speech, or that string is passed to callback function if one is provided_
+
+Return Type: `string`
+
+##### phrase
+_Something you want your dog to say_
+
+Type: `string`
+
+Default: `"woof"` or `"bow wow"` or `"growl"`
+
+Required: _no_
+
+##### callback
+_A function to process your doggie words_
+
+Type: `function: fn(words)`
 
 ## To do:
 
