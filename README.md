@@ -1,4 +1,13 @@
-# dog.js
+```
+                                                        __     Woof, bro.
+     _                _          ,                    ," e`--o /
+  __| | ___   __ _   (_)___     ((                   (  | __,'
+ / _` |/ _ \ / _` |  | / __|     \\~----------------' \_;/
+| (_| | (_) | (_| |_ | \__ \     (                      /
+ \__,_|\___/ \__, (_)/ |___/     /) ._______________.  )
+             |___/ |__/         (( (               (( (
+                                 ``-'               ``-'
+```
 
 [![Build Status](https://travis-ci.org/wbell/dog.js.svg?branch=master)](https://travis-ci.org/wbell/dog.js) [![Coverage Status](https://coveralls.io/repos/wbell/dog.js/badge.svg)](https://coveralls.io/r/wbell/dog.js) [![Dependency Status](https://david-dm.org/wbell/dog.js.svg)](https://david-dm.org/wbell/dog.js) [![npm version](https://badge.fury.io/js/dog.js.svg)](http://badge.fury.io/js/dog.js)
 
